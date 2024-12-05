@@ -1,0 +1,81 @@
+---
+title: "DSCI 310: Historical Horse Population in Canada"
+author: "Tiffany Timbers & Jordan Bourak"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+  pdf:
+    toc: true
+    toc-depth: 2
+editor: source
+bibliography: references.bib
+execute:
+  echo: false
+---
+
+```{python}
+import pandas as pd
+from IPython.display import Markdown, display
+from tabulate import tabulate
+```
+
+# Aim
+
+This project explores the historical population of horses in Canada 
+between 1906 and 1972 for each province.
+
+# Data
+
+Horse population data were sourced from the [@horses1; @horses2].
+
+# Methods
+
+The Python programming language (see @Python)
+and the following Python packages were used to perform the analysis: 
+pandas [@pandas], altair [@altair], click [@click], 
+as well as Quarto [@Allaire_Quarto_2022]. 
+*Note: this report is adapted from Timbers [@ttimbers-horses].* 
+
+# Results
+
+![Horse populations for all provinces in Canada from 1906 - 1972.](../results/horse_pops_plot.png){#fig-horse-pops width=80%}
+
+
+We can see from @fig-horse-pops that Ontario, Saskatchewan and Alberta 
+have had the highest horse populations in Canada. 
+All provinces have had a decline in horse populations since 1940. 
+This is likely due to the rebound of the Canadian automotive industry 
+after the Great Depression and the Second World War. 
+An interesting follow-up visualisation would be car sales per year 
+for each Province over the time period visualised above 
+to further support this hypothesis.
+
+Suppose we were interested in looking in more closely at the province 
+with the highest spread (in terms of standard deviation) of horse populations. 
+We present the standard deviations in @tbl-horses-sd.
+
+
+```{python}
+#| label: tbl-horses-sd
+#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province
+horses_sd_table = pd.read_csv("../results/horses_sd.csv")
+largest_sd = horses_sd_table['Province'].values[0]
+Markdown(horses_sd_table.to_markdown(index = False))
+```
+
+Note that we define standard deviation (of a sample) as
+
+$$s = \sqrt{\frac{\sum_{i=1}^N (x_i - \overline{x})^2}{N-1} }$$
+
+Additionally, note that in @tbl-horses-sd we consider the sample standard deviation of the number of horses during the same time span as @fig-horse-pops.
+
+![Horse populations for the province with the largest standard deviation](../results/horse_pops_plot_largest_sd.png){#fig-largest-sd width=60%}
+
+```{python}
+largest_sd_prov = "Saskatchewan"
+```
+
+In @fig-largest-sd we zoom in and look at the province of `{python} largest_sd_prov`, which had the largest spread of values in terms of standard deviation.
+
+# References
