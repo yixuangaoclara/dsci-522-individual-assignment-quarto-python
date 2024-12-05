@@ -1,8 +1,11 @@
 ---
 title: "DSCI 310: Historical Horse Population in Canada"
 author: "Tiffany Timbers & Jordan Bourak"
-format: 
-  HTML:
+format:
+  html:
+    toc: true
+    toc-depth: 2
+  pdf:
     toc: true
     toc-depth: 2
 editor: source
@@ -69,6 +72,9 @@ Additionally, note that in @tbl-horses-sd we consider the sample standard deviat
 
 ![Horse populations for the province with the largest standard deviation](../results/horse_pops_plot_largest_sd.png){#fig-largest-sd width=60%}
 
+```{python}
+largest_sd_prov = "Saskatchewan"
+```
 
 In @fig-largest-sd we zoom in and look at the province of `{python} largest_sd_prov`, which had the largest spread of values in terms of standard deviation.
 
