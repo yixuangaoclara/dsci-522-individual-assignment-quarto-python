@@ -6,6 +6,9 @@ format:
     toc: true
     toc-depth: 2
 editor: source
+bibliography: references.bib
+execute:
+  echo: false
 ---
 
 ```{python}
