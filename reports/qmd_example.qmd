@@ -21,17 +21,15 @@ between 1906 and 1972 for each province.
 
 # Data
 
-Horse population data were sourced from the 
-[Government of Canada's Open Data website](http://open.canada.ca/en/open-data) 
-(Government of Canada, 2017a and Government of Canada, 2017b).
+Horse population data were sourced from the [@horses1; @horses2].
 
 # Methods
 
-The Python programming language (Van Rossum and Drake 2009)
+The Python programming language (see @Python)
 and the following Python packages were used to perform the analysis: 
-pandas (McKinney 2010), altair (VanderPlas 2018), click (Team 2020), 
-as well as Quarto (Allaire et al. 2022). 
-*Note: this report is adapted from Timbers (2020).* 
+pandas [@pandas], altair [@altair], click [@click], 
+as well as Quarto [@Allaire_Quarto_2022]. 
+*Note: this report is adapted from Timbers [@ttimbers-horses].* 
 
 # Results
 
